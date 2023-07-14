@@ -3,9 +3,6 @@ const md5 = require('md5');
 const https = require('https');
 const querystring = require('querystring');
 
-const username = "xxx";
-const password = "xxx";
-
 function sendGetRequest(url, params) {
   const queryParams = querystring.stringify(params);
   const requestUrl = url + '?' + queryParams;
@@ -237,6 +234,13 @@ const base64 = new Base64();
 
 // 登录并获取数据
 async function loginAndGetResponse() {
+  if (process.argv.length != 4) {
+    console.error("Usage: program {username} {password}");
+    return;
+  }
+  const username = process.argv[2];
+  const password = process.argv[3];
+
   try {
     const url1 = 'https://login.ecnu.edu.cn/cgi-bin/get_challenge';
     const params1 = {
