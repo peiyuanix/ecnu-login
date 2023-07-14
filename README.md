@@ -1,19 +1,11 @@
-# Usage
+# ECNU Login Client
 
-## Install Packages
-```
-npm i js-sha1
-npm i md5
-```
-
-## Replace Username ans Password in `login.js`
-
-```
-const username = "xxx";
-const password = "xxx";
-```
+## Download 
+Download binary from [releases](https://github.com/peiyuanix/ecnu-login/releases/tag/v0.0.1)
 
 ## Login
 ```
-node .\login.js
+./ecnu-login-linux {username} {password}
+./ecnu-login-macos {username} {password}
+./ecnu-login-win {username} {password}
 ```
